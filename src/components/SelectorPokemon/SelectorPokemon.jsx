@@ -6,13 +6,14 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import usePokemons from '../../hooks/Pokemons/usePokemons';
 import { useState } from 'react';
+import TextFieldPokemon from '../TextFieldPokemon/TextFieldPokemon';
+
 
 
 const SelectorPokemon = (props) => {
 
     const pokemons = usePokemons();
     const [pokemonSeleccionadoID, setPokemonSeleccionadoID] = useState(1);
-    const [pokemonSeleccionado, setPokemonSeleccionado] = useState(null);
 
 
     function crearRegistro(pokemon, index) {
@@ -22,7 +23,6 @@ const SelectorPokemon = (props) => {
     function handleChange(event) {
         setPokemonSeleccionadoID(event.target.value);
         props.manejarPokemonSeleccionado(event.target.value);
-        setPokemonSeleccionado(event.target.value);
     }
 
 
@@ -44,6 +44,7 @@ const SelectorPokemon = (props) => {
                     </Select>
                 </FormControl>
             </Box>
+            
 
         </>
     )

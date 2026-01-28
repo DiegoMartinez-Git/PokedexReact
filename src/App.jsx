@@ -1,15 +1,20 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import TodosLosPokemons from './pages/Pokemons/TodosLosPokemons'
+import BuscadorPokemon from './pages/Pokemons/BuscadorPokemon'
+import { Routes, Route } from 'react-router-dom'
+import Menu from './components/Menu/Menu'
+import ListaPokemon from './pages/Pokemons/ListaPokemon'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-      <TodosLosPokemons></TodosLosPokemons>
+      <Menu />
+      <Routes>
+        <Route path='/lista' element={<ListaPokemon />} />
+        <Route path="/" element={<TodosLosPokemons />} />
+        <Route path="/buscador" element={<BuscadorPokemon />} />
+      </Routes>
     </>
   )
 }
