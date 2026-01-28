@@ -8,13 +8,6 @@ const BuscadorPokemon = () => {
 
     function manejarPokemonBuscado(pokemon) {
         setPokemonBuscado(pokemon);
-        console.log(pokemon);
-    }
-
-    function mostrarPokemonBuscado() {
-        if (pokemonBuscado) {
-            return <p>{pokemonBuscado}</p>
-        }
     }
 
     return (
@@ -22,7 +15,7 @@ const BuscadorPokemon = () => {
             <h1>Buscador Pokemon</h1>
             <TextFieldPokemon manejarPokemonBuscado={manejarPokemonBuscado} />
             <BuscarPokemon pokemonBuscado={pokemonBuscado} />
-            
+
         </div>
     )
 }

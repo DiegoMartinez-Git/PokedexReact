@@ -6,7 +6,7 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import usePokemons from '../../hooks/Pokemons/usePokemons';
 import { useState } from 'react';
-import TextFieldPokemon from '../TextFieldPokemon/TextFieldPokemon';
+
 
 
 
@@ -29,8 +29,8 @@ const SelectorPokemon = (props) => {
     return (
         <>
 
-            <Box sx={{ minWidth: 120 }}>
-                <FormControl fullWidth>
+            <Box sx={{ minWidth: 20 }}>
+                <FormControl>
                     <InputLabel id="demo-simple-select-label">Pokemon</InputLabel>
                     <Select
                         labelId="demo-simple-select-label"
@@ -44,7 +44,7 @@ const SelectorPokemon = (props) => {
                     </Select>
                 </FormControl>
             </Box>
-            
+
 
         </>
     )

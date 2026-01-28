@@ -19,5 +19,19 @@
     border-radius: 5px !important;
 }
 
+.nombrePokemon {
+    
+    font-weight: bold !important;
+    margin: 0 !important;
+    text-align: center !important;
+    text-decoration: none !important;
+}
+
+.linkPokemon {
+    text-decoration: none !important;
+    color: #000 !important;
+}
+
+
 
 

@@ -1,21 +1,30 @@
-import ListaPokemon from "../../components/ListaPokemon/ListaPokemon"
+import PokemonSeleccionado from "../../components/PokemonSeleccionado/PokemonSeleccionado.jsx"
 import SelectorPokemon from "../../components/SelectorPokemon/SelectorPokemon"
 import { useState } from "react";
+import usePokemons from "../../hooks/Pokemons/usePokemons";
 
 const TodosLosPokemons = () => {
 
     const [pokemonSeleccionadoID, setPokemonSeleccionadoID] = useState(1);
-    const [pokemonSeleccionadoImagen, setPokemonSeleccionadoImagen] = useState(null);
+
 
     function manejarPokemonSeleccionado(pokemon) {
-        console.log(pokemon)
         setPokemonSeleccionadoID(pokemon)
-        setPokemonSeleccionadoImagen(pokemon)
     }
+    const { pokemons, loading } = usePokemons();
+
+    if (loading || !pokemons.length) {
+        return <h1>Cargando...</h1>;
+    }
+
+    const pokemonEncontrado = pokemons.find((p, index) => index + 1 === parseInt(pokemonSeleccionadoID));
+
+    if (!pokemonEncontrado) return <h1>Pokemon no encontrado</h1>;
+    
     return (
         <div>
             <SelectorPokemon manejarPokemonSeleccionado={manejarPokemonSeleccionado} />
-            <ListaPokemon pokemonSeleccionadoId={pokemonSeleccionadoID} pokemonSeleccionadoImagen={pokemonSeleccionadoImagen} />
+            <PokemonSeleccionado pokemonSeleccionadoId={parseInt(pokemonSeleccionadoID)} pokemonSeleccionado={pokemonEncontrado} />
         </div>
     )
 }

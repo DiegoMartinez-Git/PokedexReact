@@ -1,6 +1,6 @@
 import usePokemons from "../../hooks/Pokemons/usePokemons";
 import "./ListadoPokemon.css";
-
+import { Link } from "react-router-dom";
 
 
 const ListadoPokemon = () => {
@@ -9,9 +9,14 @@ const ListadoPokemon = () => {
 
     function crearRegistro(pokemon, index) {
         return (
-            <div className="elementoPokemon">
-                <img src={"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/" + (index + 1) + ".png"}></img>{pokemon.name}
-            </div>
+                <Link className="linkPokemon elementoPokemon" to={`/pokemon/${index + 1}`}>
+                    <img 
+                        src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${index + 1}.png`} 
+                        alt={pokemon.name} 
+                    />
+                    <span className="nombrePokemon">{pokemon.name}</span>
+                </Link>
+            
         )
     }
 
