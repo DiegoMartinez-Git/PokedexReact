@@ -1,16 +1,111 @@
-# React + Vite
+# WebPokedex <img src="https://www.freeiconspng.com/thumbs/pokeball-png/file-pokeball-png-0.png" width="40" height="40" />
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Proyecto de Pokedex desarrollado con **React**, utilizando la API pública de [PokeAPI](https://pokeapi.co/).
 
-Currently, two official plugins are available:
+## Tecnologías y Librerías Utilizadas
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Este proyecto ha sido construido utilizando las siguientes tecnologías y librerías clave:
 
-## React Compiler
+*   **React**: Librería principal para la construcción de la interfaz de usuario.
+*   **Vite**: Entorno de desarrollo rápido y herramienta de construcción.
+*   **React Router DOM**: Para el manejo de rutas y navegación entre páginas (`/`, `/lista`, `/buscador`, `/pokemon/:id`).
+*   **Material UI (MUI)**: Componentes de interfaz de usuario pre-diseñados (Selects, Inputs, etc.).
+*   **Fetch API**: Para realizar peticiones HTTP a PokeAPI.
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+## 📁 Estructura del Proyecto
 
-## Expanding the ESLint configuration
+```text
+src
+│   App.css
+│   App.jsx
+│   index.css
+│   main.jsx
+│   
+├───assets
+│       react.svg
+│       
+├───components
+│   ├───BuscarPokemon
+│   │       BuscarPokemon.jsx
+│   │       
+│   ├───ListadoPokemon
+│   │       ListadoPokemon.css
+│   │       ListadoPokemon.jsx
+│   │       
+│   ├───Menu
+│   │       menu.css
+│   │       Menu.jsx
+│   │       
+│   ├───PokemonSeleccionado
+│   │       PokemonSeleccionado.css
+│   │       PokemonSeleccionado.jsx
+│   │
+│   ├───PokemonUnico
+│   │       PokemonUnico.jsx
+│   │
+│   ├───SelectorPokemon
+│   │       SelectorPokemon.jsx
+│   │
+│   └───TextFieldPokemon
+│           TextFieldPokemon.jsx
+│
+├───hooks
+│   └───Pokemons
+│           usePokemons.jsx
+│
+├───pages
+│   └───Pokemons
+│           BuscadorPokemon.jsx
+│           ListaPokemon.jsx
+│           Pokemon.jsx
+│           TodosLosPokemons.jsx
+│
+└───services
+    └───Pokemons
+            getPokemons.js
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Instalación
+
+Sigue estos pasos para clonar y ejecutar el proyecto en tu máquina local:
+
+### 1. Clonar el repositorio
+
+Abre tu terminal y ejecuta el siguiente comando para descargar el código:
+
+```bash
+git clone https://github.com/DiegoMartinez-Git/PokedexReact.git
+```
+
+### 2. Entrar en la carpeta del proyecto
+
+```bash
+cd PokedexReact
+```
+
+*(Nota: Asegúrate de que el nombre de la carpeta coincida con el que se creó al clonar)*
+
+### 3. Instalar las dependencias
+
+Descarga e instala todas las librerías necesarias ejecutando:
+
+```bash
+npm install
+```
+
+### 4. Ejecutar el servidor de desarrollo
+
+Para iniciar la aplicación localmente:
+
+```bash
+npm run dev
+```
+
+La terminal te mostrará una URL local (generalmente `http://localhost:5173/`) donde podrás ver la aplicación funcionando.
+
+## Descripción de Funcionalidades
+
+*   **Selector de Pokémon**: Un desplegable para elegir un Pokémon y ver su imagen directamente.
+*   **Listado Completo**: Visualización de los primeros 151 Pokémon con enlaces a sus fichas individuales.
+*   **Buscador**: Utilidad para filtrar Pokémon por nombre en tiempo real.
+*   **Ficha de Pokémon**: Página de detalle (Ruta dinámica) que muestra información específica de un Pokémon seleccionado.
